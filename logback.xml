@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 默认配置, 无特殊需求无需更改 -->
+<configuration>
+    <property name="LOG_HOME" value="/var/www/logs"/>
+    <property name="LOG_FILE" value="${LOG_HOME}/growing.log" />
+    <property name="LOG_SIZE" value="20MB" />
+    <property name="LOG_HISTORY_DAYS" value="30" />
+</configuration>

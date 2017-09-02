@@ -1,4 +1,4 @@
-package com.jary.daily.grows.annoation;
+package com.jary.daily.grows.annoation.demo1;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -13,7 +13,7 @@ public class ReadAnnotationInfoTest {
 
     public static void main(String[] args) {
         try {
-            Class c = Class.forName("com.jary.daily.grows.annoation.AnnotationTest");
+            Class c = Class.forName("com.jary.daily.grows.annoation.demo1.AnnotationTest");
             Method[] methods = c.getDeclaredMethods();
             Annotation[] annotations;
             //遍历所有方法，得到方法上的注解信息

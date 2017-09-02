@@ -25,6 +25,7 @@ public class GrowsController {
 
     @RequestMapping(value = "/departments/{departmentId}")
     public String findDepatment(@PathVariable String departmentId){
+        LOGGRE.info("日志输出测试");
         String result = "Find department with ID: "+departmentId;
         return result;
     }

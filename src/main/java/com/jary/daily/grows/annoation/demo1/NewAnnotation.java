@@ -1,4 +1,4 @@
-package com.jary.daily.grows.annoation;
+package com.jary.daily.grows.annoation.demo1;
 
 /**
  * @author fanzhengjie
