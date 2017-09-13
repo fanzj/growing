@@ -11,6 +11,9 @@ public class GrowingApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("加载。。。");
 	}
+
+
 
 }

@@ -1,5 +1,9 @@
 package com.jary.daily.test;
 
+import org.aspectj.lang.annotation.Before;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -9,7 +13,10 @@ import java.util.concurrent.ConcurrentMap;
  * @version 1.0
  * @create 2017/8/19 下午1:35
  */
+@Component
 public class Test070819 {
+
+    Integer num;
 
     public static void main(String[] args) {
         Random random = new Random();
