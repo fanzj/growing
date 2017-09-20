@@ -17,6 +17,8 @@ import java.util.concurrent.ConcurrentMap;
 public class Test070819 {
 
     Integer num;
+    Object object;
+
 
     public static void main(String[] args) {
         Random random = new Random();

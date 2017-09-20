@@ -1,2 +1,12 @@
 server:
   port: 8085
+
+author:
+  name: wyf
+  age: 32
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+
