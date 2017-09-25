@@ -1,5 +1,8 @@
 package com.jary.daily.grows.test;
 
+import java.util.Random;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+
 /**
  * @author fanzhengjie
  * @version 1.0
@@ -7,35 +10,26 @@ package com.jary.daily.grows.test;
  */
 public class DiDi070826 {
 
-    class A{
 
-        public void say(){
-            System.out.println("A.say()");
-        }
-    }
-
-    class B{
-
-        public void speak(){
-            System.out.println("B.speak()");
-        }
-
-    }
-
-    private A a;
-    private B b;
-
-    public void doSth(){
-        a.say();
-        b.speak();
-    }
 
 
     public static void main(String[] args) {
+        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(3);
+        for(int i=0;i<10;i++){
+            final int j = i;
+            executor.execute(new Thread(){
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(new Random().nextInt(1000));
+                        System.out.print(j);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
 
-        DiDi070826 obj = new DiDi070826();
-        DiDi070826.A a = obj.new A();
-        a.say();
 
     }
 
