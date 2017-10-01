@@ -1,5 +1,7 @@
 package com.jary.daily.grows.algorithms.str.match;
 
+import java.io.FileOutputStream;
+
 /**
  * @author fanzhengjie
  * @version 1.0
@@ -53,9 +55,16 @@ public class Sunday {
         return -1;
     }
 
-    public static void main(String[] args) {
-        Sunday.strMatch("abcdebcdbcdebcde","bcde");
+    static int arr[] = new int[5];
 
+    public static void main(String[] args) {
+      //  Sunday.strMatch("abcdebcdbcdebcde","bcde");
+        double a = 0.6332;
+       // float b = 0.6332;
+       // float f = 45.2;
+       // char c = ' u';
+        System.out.println(arr[0]);
+       // FileOutputStream fileOutputStream = new FileOutputStream()
     }
 
 
