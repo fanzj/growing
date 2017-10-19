@@ -23,7 +23,7 @@ public class SortUtils {
                 if (a[i] < a[i - 1]) {
                     int j = i - 1;
                     int x = a[i];//哨兵
-                    a[i] = a[i - 1];
+                    //a[i] = a[i - 1];
                     while (j >= 0 && x < a[j]) {
                         a[j + 1] = a[j];
                         j--;
@@ -53,7 +53,7 @@ public class SortUtils {
                 if (a[i] < a[i - dk]) {
                     int j = i - dk;
                     int x = a[i];//哨兵
-                    a[i] = a[i - dk];
+                    //a[i] = a[i - dk];
                     while (j >= 0 && x < a[j]) {
                         a[j + dk] = a[j];
                         j -= dk;
@@ -281,9 +281,9 @@ public class SortUtils {
         System.out.println("希尔排序后：" + Arrays.toString(a));*/
 
 
-     /*   System.out.println("选择排序前：" + Arrays.toString(a));
+        System.out.println("选择排序前：" + Arrays.toString(a));
         SelectSort.sort2(a);
-        System.out.println("选择排序后：" + Arrays.toString(a));*/
+        System.out.println("选择排序后：" + Arrays.toString(a));
 
    /*     System.out.println("堆排序前：" + Arrays.toString(a));
         HeapSort.sort(a);
@@ -297,9 +297,9 @@ public class SortUtils {
         QuickSort.sort(a,0,a.length-1);
         System.out.println("快速排序后：" + Arrays.toString(a));*/
 
-        System.out.println("归并排序前：" + Arrays.toString(a));
+       /* System.out.println("归并排序前：" + Arrays.toString(a));
         MergeSort.sort(a,0,a.length-1);
-        System.out.println("归并排序后：" + Arrays.toString(a));
+        System.out.println("归并排序后：" + Arrays.toString(a));*/
     }
 
 

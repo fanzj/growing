@@ -30,7 +30,7 @@ public class BinaryTree_PreorderTraversal {
 	}
 	
 	/**
-	 * 非递归
+	 * 非递归(DFS)
 	 * @param root
 	 * @return
 	 */
