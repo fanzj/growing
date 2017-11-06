@@ -1,13 +1,16 @@
 package com.jary.daily.grows.guava;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.base.Charsets;
 import com.google.common.base.Splitter;
+import com.google.common.io.Resources;
 import org.apache.commons.io.FileUtils;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -22,6 +25,12 @@ public class SplliterDemo {
         File file = ResourceUtils.getFile("classpath:config/maintain.json");
         String configStr = FileUtils.readFileToString(file);
         System.out.println(configStr);
+        return configStr;
+    }
+
+    public static String maintainLabel() throws IOException {
+        URL url = Resources.getResource("config/maintain.json");
+        String configStr = Resources.toString(url, Charsets.UTF_8);
         return configStr;
     }
 
@@ -59,5 +68,8 @@ public class SplliterDemo {
         System.out.println(label.getType());
 
         System.out.println(mapSplitter());
+
+        System.out.println("----------------");
+        System.out.println(maintainLabel());
     }
 }
