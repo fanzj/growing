@@ -26,12 +26,25 @@ public class DaoFuDemo {
             diff = new ArrayList<>();
             total_stay = 0;
         }
+
+        @Override
+        public String toString() {
+            return "Employee{" +
+                "in=" + in +
+                ", out=" + out +
+                ", diff=" + diff +
+                ", total_stay=" + total_stay +
+                '}';
+        }
     }
 
     public static void main(String args[]) {
 
         Scanner in = new Scanner(System.in);
         Employee[] employees = new Employee[MAX_ID];//每个索引表示员工编号
+        for (int i = 1; i < MAX_ID; i++) {
+            employees[i] = new Employee();
+        }
         int N;//N条记录
 
         N = Integer.valueOf(in.nextLine());
@@ -47,7 +60,6 @@ public class DaoFuDemo {
             int total_min = time[0] * 60 + time[1];
 
             //作为结构输入
-            employees[id] = new Employee();
             if ("E".equals(tag)) {//进入
                 employees[id].in.add(total_min);
             } else if ("L".equals(tag)) {//离开
@@ -55,42 +67,42 @@ public class DaoFuDemo {
             }
         }
 
+
         int total_num = 0;//有效记录数
         int total_time = 0;//总时间数
         int max_time = Integer.MIN_VALUE;//最大时间
-        for (int i = 1; i <= MAX_ID; i++) {
+        for (int i = 1; i < MAX_ID; i++) {
             //筛选有效记录
-            if(employees[i]!=null){
-                int size_in = employees[i].in.size();//员工i进入的时间列表长度
-                int size_out = employees[i].out.size();//员工i离开时时间列表长度
-                if (size_in != 0 && size_out != 0) {//有效记录
-                    int min_size = Math.min(size_in, size_out);
 
-                    //记录有效，计算每次进入离开的滞留时间
-                    int total_stay = 0;
-                    for (int j = 0; j < min_size; j++) {
-                        employees[i].diff.add(employees[i].out.get(j) - employees[i].in.get(j));
+            int size_in = employees[i].in.size();//员工i进入的时间列表长度
+            int size_out = employees[i].out.size();//员工i离开时时间列表长度
+            if (size_in != 0 && size_out != 0) {//有效记录
+                int min_size = Math.min(size_in, size_out);
 
-                        //该员工的总滞留时间
-                        total_stay += employees[i].out.get(j) - employees[i].in.get(j);
+                //记录有效，计算每次进入离开的滞留时间
+                int total_stay = 0;
+                for (int j = 0; j < min_size; j++) {
+                    employees[i].diff.add(employees[i].out.get(j) - employees[i].in.get(j));
 
-                        //总时间增加
-                        total_time += employees[i].out.get(j) - employees[i].in.get(j);
+                    //该员工的总滞留时间
+                    total_stay += employees[i].out.get(j) - employees[i].in.get(j);
 
+                    //总时间增加
+                    total_time += employees[i].out.get(j) - employees[i].in.get(j);
 
-                    }
-
-                    employees[i].total_stay = total_stay;
-
-                    //找出最大滞留时间
-                    max_time = Math.max(max_time, employees[i].total_stay);
-
-                    //有效记录增加
-                    total_num++;
 
                 }
 
+                employees[i].total_stay = total_stay;
+
+                //找出最大滞留时间
+                max_time = Math.max(max_time, employees[i].total_stay);
+
+                //有效记录增加
+                total_num++;
+
             }
+
 
         }
 
