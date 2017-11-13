@@ -4,15 +4,13 @@ import com.alibaba.fastjson.JSON;
 import com.google.common.base.Charsets;
 import com.google.common.base.Splitter;
 import com.google.common.io.Resources;
-import org.apache.commons.io.FileUtils;
-import org.springframework.util.ResourceUtils;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
+import org.apache.commons.io.FileUtils;
+import org.springframework.util.ResourceUtils;
 
 /**
  * @author fanzhengjie

@@ -1,9 +1,9 @@
 package com.jary.daily.redis;
 
-import org.junit.Test;
+/*import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.JedisPoolConfig;*/
 
 /**
  * @author fanzhengjie
@@ -12,10 +12,10 @@ import redis.clients.jedis.JedisPoolConfig;
  */
 public class JedisDemo {
 
-    @Test
-    /**
+  /*  @Test
+    *//**
      * 单实例的测试
-     */
+     *//*
     public void demo1(){
         //1.设置IP地址和端口
         Jedis jedis = new Jedis("127.0.0.1",6379);
@@ -26,12 +26,12 @@ public class JedisDemo {
         System.out.println(value);
         //4.释放资源
         jedis.close();
-    }
+    }*/
 
-    @Test
-    /**
+   /* @Test
+    *//**
      * 连接池方式连接
-     */
+     *//*
     public void demo2(){
         //获得连接池的配置对象
         JedisPoolConfig config = new JedisPoolConfig();
@@ -63,5 +63,5 @@ public class JedisDemo {
                 jedisPool.close();
             }
         }
-    }
+    }*/
 }
