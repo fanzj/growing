@@ -46,9 +46,7 @@ public class DateUtils {
     /**
      * 在当前时间上增加x天
      *
-     * @param date
-     * @param x    为正表示向后，为负表示向前
-     * @return
+     * @param x 为正表示向后，为负表示向前
      */
     public static Date addXDay(Date date, int x) {
         Date res = (Date) date.clone();
@@ -61,9 +59,6 @@ public class DateUtils {
 
     /**
      * 获取date的第二天
-     *
-     * @param date
-     * @return
      */
     public static Date getNextDay(Date date) {
         Date res = (Date) date.clone();
@@ -79,9 +74,6 @@ public class DateUtils {
 
     /**
      * 设置时间为当月第一天
-     *
-     * @param date
-     * @return
      */
     public static Date startMonth(Date date) {
         Date res = (Date) date.clone();
@@ -98,9 +90,6 @@ public class DateUtils {
 
     /**
      * 设置时间为当月最后一天
-     *
-     * @param date
-     * @return
      */
     public static Date endMonth(Date date) {
         Date res = (Date) date.clone();
@@ -118,20 +107,33 @@ public class DateUtils {
 
     /**
      * 设置时间为下月第一天0点
-     *
-     * @param date
-     * @return
      */
     public static Date getNextMonthOfFirstDay(Date date) {
         Date res = startMonth(date);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(res);
-        calendar.add(Calendar.MONTH,1);
+        calendar.add(Calendar.MONTH, 1);
         res.setTime(calendar.getTime().getTime());
         return res;
     }
 
+    ///////////////
 
+    /**
+     * 获得昨天结束时间
+     */
+    public static Date yestodayEndTime() {
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DAY_OF_MONTH, -1);
+        c.set(Calendar.HOUR_OF_DAY, 23);
+        c.set(Calendar.MINUTE, 59);
+        c.set(Calendar.SECOND, 59);
+        return c.getTime();
+    }
+
+    public static void main(String[] args){
+        System.out.println(yestodayEndTime());
+    }
 
 
 }
