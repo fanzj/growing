@@ -1,5 +1,6 @@
 package com.jary.daily.utils;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -86,8 +87,19 @@ public class RegexUtils {
         System.out.println(s3.matches("\\d{4}-\\d{7}|\\d{3}-\\d{8}"));
     }
 
+    private static void test2(){
+        BigDecimal amount = new BigDecimal("52.3");
+        System.out.println(amount.toString());
+        Pattern pattern = Pattern.compile("^[-|+]?\\d*([.]\\d{0,2})?$");
+        Matcher matcher = pattern.matcher(amount.toString());
+        if (!matcher.find()) {
+            System.out.println("充值金额不正确, 最多保留两位小数");
+        }
+        System.out.println("find");
+    }
+
     public static void main(String[] args) {
-        System.out.println("phone : " + checkPhone("13539770000"));
+        /*System.out.println("phone : " + checkPhone("13539770000"));
         System.out.println("phone : " + checkPhone("23539770000"));
         System.out.println("phone : " + checkPhone("17539770000"));
         strMatch();
@@ -95,6 +107,8 @@ public class RegexUtils {
         getStrings();
         replace();
         System.out.println("=========================");
-        test();
+        test();*/
+
+        test2();
     }
 }
