@@ -13,7 +13,8 @@ public class WechatServer implements Observerable{
 
     //注意到这个List集合的泛型参数为Observer接口，设计原则：面向接口编程而不是面向实现编程
     private List<Observer> list;
-    private String message;
+    private String group;
+    private String key;
 
     public WechatServer() {
         list = new ArrayList<Observer>();
@@ -34,14 +35,15 @@ public class WechatServer implements Observerable{
     public void notifyObserver() {
         for(int i = 0; i < list.size(); i++) {
             Observer oserver = list.get(i);
-            oserver.update(message);
+            oserver.update(group,key);
         }
     }
 
 
-    public void setInfomation(String s) {
-        this.message = s;
-        System.out.println("微信服务更新消息： " + s);
+    public void setInfomation(String group, String key) {
+        this.group = group;
+        this.key = key;
+        System.out.println("group：" + group + ", key: "+key);
         //消息更新，通知所有观察者
         notifyObserver();
     }

@@ -10,18 +10,16 @@ public class Test {
     public static void main(String[] args) {
         WechatServer server = new WechatServer();
 
-        Observer userZhang = new User("ZhangSan");
-        Observer userLi = new User("LiSi");
-        Observer userWang = new User("WangWu");
+        Observer userZhang = new User("出入金");
 
         server.registerObserver(userZhang);
-        server.registerObserver(userLi);
-        server.registerObserver(userWang);
-        server.setInfomation("PHP是世界上最好用的语言！");
+        server.setInfomation("com.enniu.service.cashflow.warn","monitors");
 
         System.out.println("----------------------------------------------");
+        Observer userLi = new User("人品");
         server.removeObserver(userZhang);
-        server.setInfomation("JAVA是世界上最好用的语言！");
+        server.registerObserver(userLi);
+        server.setInfomation("com.enniu.service.rp.warn","cellphoneList");
 
     }
 }
