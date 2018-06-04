@@ -10,16 +10,16 @@ public class Test {
     public static void main(String[] args) {
         WechatServer server = new WechatServer();
 
-        Observer userZhang = new User("出入金");
+        Observer userZhang = new User("crj");
 
         server.registerObserver(userZhang);
-        server.setInfomation("com.enniu.service.cashflow.warn","monitors");
+        server.setInfomation("b","c");
 
         System.out.println("----------------------------------------------");
-        Observer userLi = new User("人品");
+        Observer userLi = new User("rp");
         server.removeObserver(userZhang);
         server.registerObserver(userLi);
-        server.setInfomation("com.enniu.service.rp.warn","cellphoneList");
+        server.setInfomation("e","f");
 
     }
 }
