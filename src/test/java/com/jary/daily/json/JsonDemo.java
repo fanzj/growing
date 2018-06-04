@@ -75,4 +75,18 @@ public class JsonDemo {
         System.out.println(jsonObject);
     }
 
+    @Test
+    public void test1(){
+        String content = "{\n"
+            + "  \"mobiles\": \"13067943279,13456937592,13515717876,18605717989,13071804625,13758179200,18626872507,15925696977,13757164912,13957113014,15657129775,18657921320,18868831807\",\n"
+            + "  \"state\": 1\n"
+            + "}";
+        com.alibaba.fastjson.JSONObject result = com.alibaba.fastjson.JSONObject.parseObject(content);
+        if(result!=null){
+            System.out.println("result is not null." + result);
+        }else{
+            System.out.println("result is null.");
+        }
+    }
+
 }

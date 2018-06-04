@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+
+
+    <!-- spring自动任务调度器配置 -->
+
+<!--    &lt;!&ndash; 要调用的工作类 &ndash;&gt;
+    <bean id="quartzJob1" class="com.jary.daily.quartz.QuartzJob1"></bean>
+
+    &lt;!&ndash; 任务配置列表 &ndash;&gt;
+    <bean id="jobtask1" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        &lt;!&ndash; 调用的类 &ndash;&gt;
+        <property name="targetObject" ref="quartzJob1"/>
+        &lt;!&ndash; 调用类中的方法 &ndash;&gt;
+        <property name="targetMethod" value="work"/>
+        &lt;!&ndash; 是否允许任务并发执行。当值为false时，表示必须等到前一个线程处理完毕后才再启一个新的线程 &ndash;&gt;
+        <property name="concurrent" value="false"/>
+    </bean>
+
+
+    &lt;!&ndash; 触发器配置  时间指定 &ndash;&gt;
+    <bean id="cronTrigger1" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobtask1"></property>
+        &lt;!&ndash; cron表达式 &ndash;&gt;
+        <property name="cronExpression">
+            &lt;!&ndash; 每隔10秒执行一次 <value>0/10 * * * * ?</value> &ndash;&gt;
+            &lt;!&ndash; 每天每隔5分钟执行一次 <value>0 0/5 * * * ?</value> &ndash;&gt;
+            <value>0 0/1 * * * ?</value>
+            &lt;!&ndash; 每天上午8点执行一次 <value>0 0 8 * * ?</value>&ndash;&gt;
+            &lt;!&ndash; 在每天下午16点到下午16:59期间的每1分钟触发 <value>0 * 16 * * ?</value> &ndash;&gt;
+        </property>
+    </bean>
+
+
+    &lt;!&ndash; 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 &ndash;&gt;
+    <bean id="startQuertz" lazy-init="false" autowire="no"
+        class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                &lt;!&ndash; 触发器列表    &ndash;&gt;
+                <ref bean="cronTrigger1" />
+            </list>
+        </property>
+    </bean>-->
+
+</beans>
