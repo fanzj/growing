@@ -36,16 +36,22 @@ public class ClazzTest {
         channelServiceMap.put("101", Male.class);
 
         Person person = getRealService("101");
-        person.eat();
-        person.say();
-        person.sleep();
+        if(person != null){
+            person.eat();
+            person.say();
+            person.sleep();
+        }
+
     }
 
     public static <T> T getRealService(String channelCode) throws IllegalAccessException, InstantiationException {
         Class<T> clazz = channelServiceMap.get(channelCode);
-        Object object = clazz.newInstance();
-        T realService = (T) object;
-        return realService;
+        if(clazz != null){
+            Object object = clazz.newInstance();
+            T realService = (T) object;
+            return realService;
+        }
+        return null;
     }
 
 
