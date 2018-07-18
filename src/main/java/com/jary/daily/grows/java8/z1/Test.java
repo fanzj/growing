@@ -1,0 +1,28 @@
+package com.jary.daily.grows.java8.z1;
+
+import java.io.File;
+import java.io.FileFilter;
+
+/**
+ * @author fanzhengjie
+ * @create 2018/7/18 上午9:57
+ * @description
+ */
+public class Test {
+
+    public static void main(String[] args){
+
+    }
+
+    public static void testListHiddenFile(){
+        File[] hiddenFiles = new File(".").listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.isHidden();
+            }
+        });
+
+        hiddenFiles = new File(".").listFiles(File::isHidden);
+    }
+
+}

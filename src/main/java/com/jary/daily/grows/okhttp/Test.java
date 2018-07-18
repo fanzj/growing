@@ -14,7 +14,7 @@ public class Test {
 
     public static final String URL = "http://localhost:8082/";
 
-    public static final String POSR_URL = "http://10.0.40.91:9092/rpb-internal/api/offline/repayment/getRepaymentAmount";
+    public static final String POSR_URL = "";
 
     public static void main(String[] args) throws IOException {
         String userName = "fanzhengjie";
