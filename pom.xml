@@ -25,6 +25,8 @@
 
 		<org.springframework.version>3.2.8.RELEASE</org.springframework.version>
 		<!-- <org.springframework.version>4.0.2.RELEASE</org.springframework.version> -->
+
+		<metrics.version>3.1.2</metrics.version>
 	</properties>
 
 	<dependencies>
@@ -139,7 +141,11 @@
 			<version>2.9.0</version>
 		</dependency>
 
-
+		<dependency>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-core</artifactId>
+			<version>${metrics.version}</version>
+		</dependency>
 
 	</dependencies>
 

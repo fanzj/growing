@@ -24,6 +24,7 @@ public class TestInterceptor implements HandlerInterceptor {
             flag = false;
             System.out.println("/author方法被拦截");
         }else{
+            flag = true;
             System.out.println("未被拦截");
         }
         return flag;
