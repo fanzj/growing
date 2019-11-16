@@ -1,5 +1,6 @@
 package com.jary.daily.controller;
 
+import com.jary.daily.config.PropertyConfigurer;
 import com.jary.daily.domain.AuthorSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,5 +24,10 @@ public class PropertiesController {
     @RequestMapping("/author")
     public String index() {
         return "author name is " + authorSettings.getName() + " and author age is " + authorSettings.getAge();
+    }
+
+    @RequestMapping("/props")
+    public String getPropertiesMap(){
+        return PropertyConfigurer.getAllProperty().toString();
     }
 }

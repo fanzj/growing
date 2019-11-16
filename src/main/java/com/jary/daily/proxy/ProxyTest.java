@@ -8,6 +8,8 @@ package com.jary.daily.proxy;
 public class ProxyTest {
 
     public static void main(String[] args) {
+        //保存字节码
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
         JDKProxy jdkProxy = new JDKProxy();
         UserManager userManagerJDK = (UserManager) jdkProxy.newProxy(new UserManagerImpl());
         userManagerJDK.addUser("tom", "root");

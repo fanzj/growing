@@ -1,5 +1,10 @@
 package com.jary.daily.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.jary.daily.grows.algorithms.design.observer.User;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -48,6 +53,27 @@ public class GrowsController {
         mav.addObject("courseId",courseId);//传入到页面
         System.out.println("Find courses with ID: " + courseId);
         return mav;
+    }
+
+    @RequestMapping(value = "/getJson", method = RequestMethod.POST)
+    public String testGetJson(HttpServletRequest request){
+        String param= null;
+        try {
+            BufferedReader streamReader = new BufferedReader( new InputStreamReader(request.getInputStream(), "UTF-8"));
+            StringBuilder responseStrBuilder = new StringBuilder();
+            String inputStr;
+            while ((inputStr = streamReader.readLine()) != null)
+                responseStrBuilder.append(inputStr);
+
+
+            JSONObject jsonObject = JSONObject.parseObject(responseStrBuilder.toString());
+            param = jsonObject.toJSONString();
+            System.out.println(jsonObject);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return param;
+
     }
 
 }
